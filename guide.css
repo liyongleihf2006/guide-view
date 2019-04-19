@@ -1,0 +1,19 @@
+.guide-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+}
+
+.guide-focus {
+  position: absolute;
+  box-shadow: 0 0 10000px 10000px rgba(0,0,0,.1);
+  border-radius: 16px;
+}
+
+.guide-overflow-hidden {
+  overflow: hidden;
+}
+.guide-hidden{
+  display: none;
+}
