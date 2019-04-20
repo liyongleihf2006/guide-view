@@ -127,8 +127,12 @@ function unbindGlobalEvent(){
   window.removeEventListener("click", globalEvent);
 }
 
-function globalEvent() {
-  i++;
+function globalEvent(event) {
+  if(event.type==="keydown"&&event.keyCode===37){
+    i--;
+  }else{
+    i++;
+  }
   guideStep();
 }
 
@@ -136,6 +140,9 @@ function guideStep() {
   if (i >= _items.length) {
     fixed(_items[0].el);
     stopGuide();
+    return;
+  }else if(i<0){
+    i=0;
     return;
   }
   const item = _items[i],

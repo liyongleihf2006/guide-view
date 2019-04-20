@@ -22,7 +22,7 @@ let items = [{
 }, {
   el: test2,
   extraRender: ({ next, stopGuide, el, guideMask, guideFocus, focusPosition, center, topCenter, rightCenter, bottomCenter, leftCenter }) => {
-    guideMask.removeChild(firstStepPanel);
+    guideMask.contains(firstStepPanel)&&guideMask.removeChild(firstStepPanel);
     secondStepPanel = document.createElement("div");
     Object.assign(secondStepPanel.style, leftCenter, {
       position: "absolute",
@@ -54,7 +54,7 @@ let items = [{
 }, {
   el: test3,
   extraRender: ({ next, stopGuide, el, guideMask, guideFocus, focusPosition, center, topCenter, rightCenter, bottomCenter, leftCenter }) => {
-    guideMask.removeChild(secondStepPanel);
+    guideMask.contains(secondStepPanel)&&guideMask.removeChild(secondStepPanel);
     next();
   }
 }, {
